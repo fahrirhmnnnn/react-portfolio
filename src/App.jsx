@@ -15,12 +15,12 @@ function App() {
               loading="lazy"
             />
             <q>
-              Programming isn't about what you know, it's about what you can
-              figure out.💻
+              Pemrograman bukan soal apa yang kamu tahu, tapi soal apa yang bisa
+              kamu pecahkan. 💻
             </q>
           </div>
           <h1 className="text-3xl md:text-5xl/tight font-bold mb-6">
-            Hi, Saya Fahri Rahman🖐
+            Halo, Saya Fahri Rahman🖐
           </h1>
           <p className="text-base/loose mb-6 opacity-50">
             Saya mempunyai ketertarikan dalam bidang Programming, terutama pada
@@ -66,7 +66,7 @@ function App() {
             loading="lazy"
           />
           <p className="text-md md:text-base/loose mb-10">
-            Hi, perkenalkan nama saya Fahri Rahman, seorang Junior FrontEnd
+            Perkenalkan nama saya Fahri Rahman, seorang Junior FrontEnd
             Developer. Saya percaya bahwa desain dan fungsionalitas harus
             berjalan beriringan, sehingga setiap proyek yang saya kembangkan
             tidak hanya terlihat menarik tetapi juga memberikan pengalaman
@@ -174,18 +174,20 @@ function App() {
               data-aos-once="true"
             >
               <img src={proyek.gambar} alt="Proyek Image" loading="lazy" />
-              <div>
-                <h1 className="text-2xl font-bold my-4">{proyek.nama}</h1>
-                <p className="text-base/loose mb-4">{proyek.desk}</p>
-                <div className="flex flex-wrap gap-2">
-                  {proyek.tools.map((tool, index) => (
-                    <p
-                      className="py-1 px-3 border border-zinc-500 bg-zinc-500 rounded-md font-semibold cursor-pointer"
-                      key={index}
-                    >
-                      {tool}
-                    </p>
-                  ))}
+              <div className="flex flex-col flex-1 justify-between">
+                <div>
+                  <h1 className="text-2xl font-bold my-4">{proyek.nama}</h1>
+                  <p className="text-base/loose mb-4">{proyek.desk}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {proyek.tools.map((tool, index) => (
+                      <p
+                        className="py-1 px-3 border border-zinc-500 bg-zinc-500 rounded-md font-semibold cursor-pointer"
+                        key={index}
+                      >
+                        {tool}
+                      </p>
+                    ))}
+                  </div>
                 </div>
                 <div className="mt-8 text-center">
                   <a
