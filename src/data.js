@@ -6,6 +6,7 @@ const Image = {
 
 export default Image;
 
+// Tools
 import Tools1 from "/assets/tools/vscode.png";
 import Tools2 from "/assets/tools/reactjs.png";
 import Tools3 from "/assets/tools/tailwind.png";
@@ -14,7 +15,7 @@ import Tools5 from "/assets/tools/js.png";
 import Tools6 from "/assets/tools/nodejs.png";
 import Tools7 from "/assets/tools/github.png";
 import Tools8 from "/assets/tools/canva.png";
-import Tools9 from "/assets/tools/figma.png";
+// import Tools9 from "/assets/tools/figma.png";
 // import Tools10 from "/assets/tools/nextjs.png";
 
 export const listTools = [
@@ -23,64 +24,64 @@ export const listTools = [
     gambar: Tools1,
     nama: "Visual Studio Code",
     ket: "Code Editor",
-    dad: "100",
+    dad: 100,
   },
   {
     id: 2,
     gambar: Tools2,
     nama: "React JS",
     ket: "Library",
-    dad: "200",
+    dad: 200,
   },
   {
     id: 3,
     gambar: Tools3,
     nama: "Tailwind CSS",
     ket: "Framework",
-    dad: "300",
+    dad: 300,
   },
   {
     id: 4,
     gambar: Tools4,
     nama: "Bootstrap",
     ket: "Framework",
-    dad: "400",
+    dad: 400,
   },
   {
     id: 5,
     gambar: Tools5,
     nama: "Javascript",
     ket: "Language",
-    dad: "500",
+    dad: 500,
   },
   {
     id: 6,
     gambar: Tools6,
     nama: "Node JS",
     ket: "Javascript Runtime",
-    dad: "600",
+    dad: 600,
   },
   {
     id: 7,
     gambar: Tools7,
     nama: "Github",
     ket: "Repository",
-    dad: "700",
+    dad: 700,
   },
   {
     id: 8,
     gambar: Tools8,
     nama: "Canva",
     ket: "Design App",
-    dad: "800",
+    dad: 800,
   },
-  {
-    id: 9,
-    gambar: Tools9,
-    nama: "Figma",
-    ket: "Design App",
-    dad: "900",
-  },
+  // {
+  //   id: 9,
+  //   gambar: Tools9,
+  //   nama: "Figma",
+  //   ket: "Design App",
+  //   dad: 900,
+  // },
   // {
   //   id: 10,
   //   gambar: Tools10,
@@ -90,9 +91,15 @@ export const listTools = [
   // },
 ];
 
+// proyek
 import Proyek1 from "/assets/proyek/Proyek1.png";
 import Proyek2 from "/assets/proyek/Proyek2.png";
 import Proyek3 from "/assets/proyek/Proyek3.png";
+
+// sertifikat
+import sertifikat1 from "/assets/sertifikat/sertifikat1.png";
+import sertifikat2 from "/assets/sertifikat/sertifikat2.png";
+import sertifikat3 from "/assets/sertifikat/sertifikat3.png";
 
 export const listProyek = [
   {
@@ -101,7 +108,7 @@ export const listProyek = [
     nama: "Wedding Website",
     desk: " Dibuat menggunakan kombinasi HTML, CSS, dan JavaScript. Proyek ini dirancang untuk memberikan pengalaman pengguna yang responsif, estetis, dan fungsional.",
     tools: ["HTML", "CSS", "JavaScript", "AOS"],
-    dad: "100",
+    dad: 100,
     url: "https://fahrirhmnnnn.github.io/wedding-website/",
   },
   {
@@ -110,7 +117,7 @@ export const listProyek = [
     nama: "Portfolio Website",
     desk: "Dibuat menggunakan kombinasi HTML, CSS, JavaScript, PostCSS, dan TailwindCSS. Proyek ini dirancang untuk memberikan pengalaman pengguna yang responsif, estetis, dan fungsional.",
     tools: ["HTML", "CSS", "JavaScript", "PostCSS", "TailwindCSS"],
-    dad: "200",
+    dad: 200,
     url: "https://fahrirhmnnnn.github.io/portfolio-fahri/",
   },
   {
@@ -119,7 +126,38 @@ export const listProyek = [
     nama: "Website Kopi",
     desk: "Dibuat menggunakan kombinasi HTML, CSS, dan JavaScript. Proyek ini dirancang untuk memberikan pengalaman pengguna yang responsif, estetis, dan fungsional.",
     tools: ["HTML", "CSS", "JavaScript"],
-    dad: "300",
+    dad: 300,
     url: "https://fahrirhmnnnn.github.io/website-kedai-kopi-cuy/",
+  },
+];
+
+export const listSertifikat = [
+  {
+    id: 1,
+    nama: "Front-End Web untuk Pemula",
+    desk: "Mempelajari BOM dan DOM pada JavaScript, Penyimpanan Data dengan Web Storage, dan Interaktif dengan Event",
+    platform: "Dicoding",
+    gambar: sertifikat1,
+    url: "https://www.dicoding.com/certificates/1OP8JEN4VPQK",
+    dad: 100,
+  },
+
+  {
+    id: 2,
+    nama: "Dasar Pemrograman JavaScript",
+    desk: "Mempelajari Asynchronus Process, Code Quality, OOP, dan Bermain dengan Function",
+    platform: "Dicoding",
+    gambar: sertifikat2,
+    url: "https://www.dicoding.com/certificates/2VX35V8W3PYQ",
+    dad: 200,
+  },
+  {
+    id: 3,
+    nama: "Dasar Pemrograman Web",
+    desk: "Mempelajari HTML, CSS, Layout Responsive dengan Flexbox dan Grid,",
+    platform: "Dicoding",
+    gambar: sertifikat3,
+    url: "https://www.dicoding.com/certificates/1RXYQQ82KZVM",
+    dad: 300,
   },
 ];

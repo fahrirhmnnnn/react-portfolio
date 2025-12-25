@@ -1,40 +1,44 @@
-import DataImage from "./data";
-import { listTools, listProyek } from "./data";
-import CV_Fahri_Rahman from "/CV_Fahri_Rahman.pdf";
+import { useEffect } from "react";
+import DataImage, { listTools, listProyek, listSertifikat } from "./data";
+import CV_Fahri from "/CV_Fahri.pdf";
 
 function App() {
+  const hasAnimated = sessionStorage.getItem("heroAnimated");
+
+  useEffect(() => {
+    if (!hasAnimated) {
+      sessionStorage.setItem("heroAnimated", "true");
+    }
+  }, [hasAnimated]);
+
   return (
     <>
       <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grid-cols-1">
-        <div className="animate__animated animate__fadeInUp animate__delay-3s">
-          <div className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit p-4 rounded-2xl">
-            <img
-              src={DataImage.HeroImage}
-              alt="Hero Image"
-              className="w-10 rounded-md"
-              loading="lazy"
-            />
-            <q>
-              Pemrograman bukan soal apa yang kamu tahu, tapi soal apa yang bisa
-              kamu pecahkan. 💻
-            </q>
-          </div>
+        <div
+          className={
+            hasAnimated
+              ? ""
+              : "animate__animated animate__fadeInUp animate__delay-1s"
+          }
+        >
           <h1 className="text-3xl md:text-5xl/tight font-bold mb-6">
             Halo, Saya Fahri Rahman🖐
           </h1>
           <p className="text-base/loose mb-6 opacity-50">
-            Saya mempunyai ketertarikan dalam bidang Programming, terutama pada
-            pembuatan Website. Ketertarikan pada bidang ini sudah berlangsung
-            kurang lebih dari 1 Tahun untuk Bidang ini.
+            Saya Junior Frontend Developer yang berfokus pada pembuatan website
+            responsif dengan struktur kode yang rapi dan mudah dikembangkan
+            menggunakan HTML, CSS, JavaScript, dan React.
           </p>
+
           <div className="flex items-center sm:gap-4 gap-2">
             <a
-              href={CV_Fahri_Rahman}
-              download="CV_Fahri_Rahman.pdf"
+              href={CV_Fahri}
+              target="_self"
               className="bg-violet-700 p-4 rounded-2xl hover:bg-violet-600"
             >
-              Download CV <i className="ri-download-line ri-lg"></i>
+              Lihat CV <i className="ri-eye-line ri-lg"></i>
             </a>
+
             <a
               href="#proyek"
               className="bg-zinc-600 p-4 rounded-2xl hover:bg-zinc-500"
@@ -45,12 +49,14 @@ function App() {
         </div>
         <img
           src={DataImage.HeroImage}
-          alt="Hero Image"
-          className="w-[500px] md:ml-auto rounded-4xl animate__animated animate__fadeInUp animate__delay-4s"
-          loading="lazy"
+          alt="Image"
+          className={
+            hasAnimated
+              ? "w-[500px] md:ml-auto rounded-4xl"
+              : "w-[500px] md:ml-auto rounded-4xl animate__animated animate__fadeInUp animate__delay-2s"
+          }
         />
       </div>
-
       {/* Tentang */}
       <div className="tentang mt-32 py-10" id="tentang">
         <div
@@ -66,12 +72,12 @@ function App() {
             loading="lazy"
           />
           <p className="text-md md:text-base/loose mb-10">
-            Perkenalkan nama saya Fahri Rahman, seorang Junior FrontEnd
-            Developer. Saya percaya bahwa desain dan fungsionalitas harus
-            berjalan beriringan, sehingga setiap proyek yang saya kembangkan
-            tidak hanya terlihat menarik tetapi juga memberikan pengalaman
-            pengguna yang optimal.
+            Saya Fahri Rahman, Junior Frontend Developer yang memiliki
+            ketertarikan pada pengembangan antarmuka website. Saya terbiasa
+            membangun tampilan yang responsif, rapi, dan mudah digunakan, serta
+            menulis kode yang terstruktur agar mudah dikembangkan di masa depan.
           </p>
+
           <div className="flex items-center justify-between">
             <img
               src={DataImage.HeroImage}
@@ -88,9 +94,9 @@ function App() {
               </div>
               <div>
                 <h1 className="text-4xl mb-1">
-                  -<span className="text-violet-500">1</span>
+                  1<span className="text-violet-500">+</span>
                 </h1>
-                <p>Tahun Pengalaman</p>
+                <p>Tahun Belajar</p>
               </div>
             </div>
           </div>
@@ -144,6 +150,63 @@ function App() {
       </div>
       {/* End Tentang */}
 
+      {/* Sertifikat */}
+      <div className="sertifikat mt-32 py-10" id="sertifikat">
+        <h1
+          className="text-center text-4xl font-bold mb-2"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          Sertifikat
+        </h1>
+
+        <p
+          className="text-base/loose text-center opacity-50 mb-12"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+        >
+          Beberapa sertifikat yang saya peroleh selama proses belajar frontend.
+        </p>
+
+        <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+          {listSertifikat.map((item) => (
+            <div
+              key={item.id}
+              className="bg-zinc-800 p-4 rounded-lg hover:bg-zinc-700 transition flex flex-col"
+              data-aos="fade-up"
+              data-aos-delay={item.dad}
+            >
+              <img
+                src={item.gambar}
+                alt={item.nama}
+                className="rounded-md mb-4"
+                loading="lazy"
+              />
+
+              <h3 className="font-semibold text-lg min-h-[3.5rem]">
+                {item.nama}
+              </h3>
+              <p className="text-sm opacity-50 mb-3">{item.platform}</p>
+
+              <p className="text-sm opacity-60 mb-4 flex-1">{item.desk}</p>
+
+              {item.url && (
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-violet-400 hover:underline text-sm mt-auto"
+                >
+                  Lihat Sertifikat →
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* End Sertifikat */}
+
       {/* Proyek */}
       <div className="proyek mt-32 py-10" id="proyek">
         <h1
@@ -161,7 +224,9 @@ function App() {
           data-aos-delay="300"
           data-aos-once="true"
         >
-          Berikut ini beberapa proyek yang telah saya buat.
+          Berikut beberapa proyek frontend yang telah saya kerjakan untuk
+          melatih kemampuan dalam membangun website yang responsif dan
+          fungsional.
         </p>
         <div className="proyek-box mt-14 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 items-stretch">
           {listProyek.map((proyek) => (
@@ -203,7 +268,6 @@ function App() {
         </div>
       </div>
       {/* End Proyek */}
-
       {/* Kontak */}
       <div className="kontak mt-32 sm:p-10 p-0" id="kontak">
         <h1
@@ -221,7 +285,8 @@ function App() {
           data-aos-delay="300"
           data-aos-once="true"
         >
-          Mari terhubung dengan saya.
+          Silakan hubungi saya untuk kerja sama, proyek freelance, atau
+          kesempatan kerja.
         </p>
         <form
           action="https://formsubmit.co/rahmanfahri457@gmail.com"
