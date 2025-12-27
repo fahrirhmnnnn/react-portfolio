@@ -10,10 +10,13 @@ import PreLoader from "./components/PreLoader.jsx";
 
 import "animate.css";
 import AOS from "aos";
-import "aos/dist/aos.css"; // You can also use <link> for styles
-// ..
-AOS.init();
+import "aos/dist/aos.css";
 
+AOS.init({
+  once: true, // animasi hanya sekali
+  duration: 900, // default duration (opsional)
+  easing: "ease-out-cubic",
+});
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <PreLoader />
